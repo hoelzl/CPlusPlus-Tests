@@ -23,7 +23,7 @@ TEST(LengthTest, Unitless)
 TEST(LengthTest, MetersOnly)
 {
     EXPECT_THAT(1.0 * meter, Eq(1.0 * meter));
-    EXPECT_TRUE(false) << "1 m = " << 2.0 * meter;
+    EXPECT_THAT(1.0 * meter, Eq(2.0 * meter)) << "1 m = " << 2.0 * meter;
 }
 
 TEST(LengthTest, MetersAndCentimeters)
