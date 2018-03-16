@@ -14,5 +14,5 @@ include_directories(googletest/googlemock/include googletest/googlemock)
 
 enable_testing()
 
-add_executable(GTestMatcher unit-tests.cpp)
-target_link_libraries(GTestMatcher gtest gtest_main)
+add_executable(GTestMatcher unit-tests.cpp unit-matcher.h)
+target_link_libraries(GTestMatcher gmock gtest gtest_main)
