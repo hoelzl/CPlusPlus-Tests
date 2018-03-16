@@ -7,7 +7,7 @@ C++-FitNesse fixture.
 Some libraries are cloned as git submodules. To check out the repository and
 all its submodules do the following:
 
-    git clone git@github.com:hoelzl/CPlusPlus-Tests.git
+    git clone https://github.com/hoelzl/CPlusPlus-Tests.git
     cd CPlusPlus-Tests
     git submodule init
     git submodule update --recursive
