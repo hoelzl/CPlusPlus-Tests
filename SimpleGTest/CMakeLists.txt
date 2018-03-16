@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.11)
+cmake_minimum_required(VERSION 3.10)
 project(SimpleGTest)
 
 set(CMAKE_CXX_STANDARD 14)
@@ -6,9 +6,7 @@ set(CMAKE_CXX_STANDARD 14)
 set(Boost_USE_STATIC_LIBS OFF)
 set(Boost_USE_MULTITHREADED ON)
 set(Boost_USE_STATIC_RUNTIME OFF)
-find_package(Boost 1.66 REQUIRED COMPONENTS)
-
-include_directories(${Boost_INCLUDE_DIRS})
+find_package(Boost 1.63 REQUIRED COMPONENTS)
 
 add_subdirectory(googletest)
 include_directories(googletest/googletest/include googletest/googletest)
