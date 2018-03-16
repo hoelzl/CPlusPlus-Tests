@@ -35,4 +35,4 @@
 */cmake-build*
 
 # CLion workspaces
-*/.idea/
+.idea/
