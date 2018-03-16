@@ -1,0 +1,103 @@
+/home/tc/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/181.4203.106/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/tc/Programming/Consulting/C++-Tests
+-- The C compiler identification is GNU 7.2.0
+-- The CXX compiler identification is GNU 7.2.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Boost version: 1.63.0
+-- Found PythonInterp: /usr/bin/python (found version "2.7.14") 
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Looking for pthread_create
+-- Looking for pthread_create - not found
+-- Check if compiler accepts -pthread
+-- Check if compiler accepts -pthread - yes
+-- Found Threads: TRUE  
+-- Boost version: 1.63.0
+CMake Error at OdrViolation/googletest/googletest/cmake/internal_utils.cmake:157 (add_library):
+  add_library cannot create target "gtest" because another target with the
+  same name already exists.  The existing target is a static library created
+  in source directory
+  "/home/tc/Programming/Consulting/C++-Tests/SimpleGTest/googletest/googletest".
+  See documentation for policy CMP0002 for more details.
+Call Stack (most recent call first):
+  OdrViolation/googletest/googletest/cmake/internal_utils.cmake:184 (cxx_library_with_type)
+  OdrViolation/googletest/googletest/CMakeLists.txt:98 (cxx_library)
+
+
+CMake Error at OdrViolation/googletest/googletest/cmake/internal_utils.cmake:157 (add_library):
+  add_library cannot create target "gtest_main" because another target with
+  the same name already exists.  The existing target is a static library
+  created in source directory
+  "/home/tc/Programming/Consulting/C++-Tests/SimpleGTest/googletest/googletest".
+  See documentation for policy CMP0002 for more details.
+Call Stack (most recent call first):
+  OdrViolation/googletest/googletest/cmake/internal_utils.cmake:184 (cxx_library_with_type)
+  OdrViolation/googletest/googletest/CMakeLists.txt:99 (cxx_library)
+
+
+CMake Error at OdrViolation/googletest/googletest/CMakeLists.txt:100 (target_link_libraries):
+  Attempt to add link library "gtest" to target "gtest_main" which is not
+  built in this directory.
+
+
+CMake Error at OdrViolation/googletest/googletest/CMakeLists.txt:114 (install):
+  install TARGETS given target "gtest" which does not exist in this
+  directory.
+
+
+CMake Error at OdrViolation/googletest/googletest/cmake/internal_utils.cmake:157 (add_library):
+  add_library cannot create target "gmock" because another target with the
+  same name already exists.  The existing target is a static library created
+  in source directory
+  "/home/tc/Programming/Consulting/C++-Tests/SimpleGTest/googletest/googlemock".
+  See documentation for policy CMP0002 for more details.
+Call Stack (most recent call first):
+  OdrViolation/googletest/googletest/cmake/internal_utils.cmake:184 (cxx_library_with_type)
+  OdrViolation/googletest/googlemock/CMakeLists.txt:103 (cxx_library)
+
+
+CMake Error at OdrViolation/googletest/googlemock/CMakeLists.txt:104 (target_link_libraries):
+  Attempt to add link library "gtest" to target "gmock" which is not built in
+  this directory.
+
+
+CMake Error at OdrViolation/googletest/googletest/cmake/internal_utils.cmake:157 (add_library):
+  add_library cannot create target "gmock_main" because another target with
+  the same name already exists.  The existing target is a static library
+  created in source directory
+  "/home/tc/Programming/Consulting/C++-Tests/SimpleGTest/googletest/googlemock".
+  See documentation for policy CMP0002 for more details.
+Call Stack (most recent call first):
+  OdrViolation/googletest/googletest/cmake/internal_utils.cmake:184 (cxx_library_with_type)
+  OdrViolation/googletest/googlemock/CMakeLists.txt:105 (cxx_library)
+
+
+CMake Error at OdrViolation/googletest/googlemock/CMakeLists.txt:106 (target_link_libraries):
+  Attempt to add link library "gmock" to target "gmock_main" which is not
+  built in this directory.
+
+
+CMake Error at OdrViolation/googletest/googlemock/CMakeLists.txt:121 (install):
+  install TARGETS given target "gmock" which does not exist in this
+  directory.
+
+
+-- Boost version: 1.63.0
+CMake Error at GTestMatcher/CMakeLists.txt:11 (add_subdirectory):
+  add_subdirectory given source "googletest" which is not an existing
+  directory.
+
+
+-- Configuring incomplete, errors occurred!
+See also "/home/tc/Programming/Consulting/C++-Tests/cmake-build-debug/CMakeFiles/CMakeOutput.log".
+See also "/home/tc/Programming/Consulting/C++-Tests/cmake-build-debug/CMakeFiles/CMakeError.log".
