@@ -23,7 +23,7 @@ namespace testing {
 
     constexpr double tolerance{ 2.0 };
 
-    MATCHER_P(UnitsEq, arg2, std::string("Checks if two values with units are ") + std::string(negation ? "not " : "") + std::string("nearly equal"))
+    MATCHER_P(UnitsEq, arg2, std::string("two values with units are ") + std::string(negation ? "not " : "") + std::string("nearly equal"))
     {
         // std::cout << "Comparing " << arg << " and " << value << std::endl;
 
@@ -32,7 +32,7 @@ namespace testing {
         return diff < tolerance * std::numeric_limits<arg2_value_type>::epsilon();
     }
 
-    MATCHER_P(UnitsEqUlp, arg2, std::string("Checks if two values with units are ") + std::string(negation ? "not " : "") + std::string("nearly equal (< 4ULP)"))
+    MATCHER_P(UnitsEqUlp, arg2, std::string("two values with units are ") + std::string(negation ? "not " : "") + std::string("nearly equal (< 4ULP)"))
     {
         auto ulp_diff{ std::abs(boost::math::float_distance(arg.value(), arg2.value()))};
         return ulp_diff < 4;

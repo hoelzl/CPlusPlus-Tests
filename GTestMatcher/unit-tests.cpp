@@ -28,7 +28,7 @@ TEST(LengthTest, MetersOnly)
 
 TEST(LengthTest, MetersAndCentimeters)
 {
-    auto one_meter{ 1.0 * meter};
+    auto one_meter{ 1.0 * meter };
     auto one_hundred_centimeters{ 100.0 * centimeters };
     EXPECT_THAT(one_meter, UnitsEq(static_cast<decltype(one_meter)>(one_hundred_centimeters)));
 }
@@ -48,7 +48,7 @@ TEST(LengthTestUlp, MetersOnly)
 
 TEST(LengthTestUlp, MetersAndCentimeters)
 {
-    auto one_meter{ 1.0 * meter};
+    auto one_meter{ 1.0 * meter };
     auto one_hundred_centimeters{ 100.0 * centimeters };
     EXPECT_THAT(one_meter, UnitsEqUlp(static_cast<decltype(one_meter)>(one_hundred_centimeters)));
 }
