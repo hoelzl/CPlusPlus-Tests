@@ -15,4 +15,5 @@ include_directories(googletest/googlemock/include googletest/googlemock)
 enable_testing()
 
 add_executable(OdrViolation unit-tests-1.cpp unit-tests-2.cpp)
+target_link_libraries(OdrViolation -Wodr)
 target_link_libraries(OdrViolation gtest gtest_main)

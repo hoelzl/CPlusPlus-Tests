@@ -3,9 +3,9 @@
 //
 
 #include <boost/units/systems/si.hpp>
-#include <boost/units/systems/si/io.hpp>
+// #include <boost/units/systems/si/io.hpp>
 #include <boost/units/systems/cgs.hpp>
-#include <boost/units/systems/cgs/io.hpp>
+// #include <boost/units/systems/cgs/io.hpp>
 #include <boost/units/operators.hpp>
 #include "gmock/gmock.h"
 
@@ -23,7 +23,7 @@ TEST(LengthTest1, Unitless)
 TEST(LengthTest1, MetersOnly)
 {
     EXPECT_THAT(1.0 * meter, Eq(1.0 * meter));
-    // EXPECT_THAT(1.0 * meter, Eq(2.0 * meter)) << "1 m = " << 2.0 * meter;
+    EXPECT_THAT(1.0 * meter, Eq(2.0 * meter)) << "1 m = 2 m"; // << 2.0 * meter;
 }
 
 TEST(LengthTest1, MetersAndCentimeters)
