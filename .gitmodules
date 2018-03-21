@@ -7,3 +7,6 @@
 [submodule "GTestMatcher/googletest"]
 	path = GTestMatcher/googletest
 	url = https://github.com/google/googletest.git
+[submodule "BoostSml/Sml"]
+	path = BoostSml/Sml
+	url = https://github.com/boost-experimental/sml.git
