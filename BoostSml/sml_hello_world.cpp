@@ -8,27 +8,27 @@ namespace {
 
 // Define some events.
 
-    struct event1 {
+    struct turn_on {
     };
     struct event2 {
     };
-    struct event3 {
+    struct turn_off {
     };
 }
 
 struct states {
-    static constexpr decltype(sml::state<class idle>) idle_1 = sml::state<class idle>;
+    static constexpr decltype(sml::state<class idle>) inactive = sml::state<class idle>;
 
     auto operator()() const noexcept {
         using namespace sml;
 //        static const auto idle = state<class idle>;
         return make_transition_table(
-                *idle_1 + event<event1> = "state_1"_s,
+                *inactive + event<event1> = "state_1"_s,
                 "state_1"_s + sml::on_entry<_> / [] { std::cout << "Entering state_1" << std::endl; },
                 "state_1"_s + sml::on_exit<_> / [] { std::cout << "Exiting state_1" << std::endl; },
                 "state_1"_s + event<event1> = "state_1"_s,
                 "state_1"_s + event<event2> = "state_2"_s,
-                "state_2"_s + event<event3> = X
+                "state_2"_s + event<turn_off> = X
         );
     }
 };
@@ -46,7 +46,7 @@ struct const_states {
                 state_1 + sml::on_exit<_> / [] { std::cout << "Exiting state_1" << std::endl; },
                 state_1 + event<event1> = state_1,
                 state_1 + event<event2> = state_2,
-                state_2 + event<event3> = X,
+                state_2 + event<turn_off> = X,
                 X + sml::on_entry<_> / [] { std::cout << "Entering state X" << std::endl; }
         );
     }
@@ -67,13 +67,13 @@ int main() {
 //    CheckState(state_machine, "idle", sml::state<class idle>);
     CheckState(state_machine, "idle", sml::state<class idle>);
 
-    state_machine.process_event(event1{});
+    state_machine.process_event(turn_on{});
     CheckState(state_machine, "idle", sml::state<class idle>);
     CheckState(state_machine, "idle", "state_1"_s);
 
-    state_machine.process_event(event1{});
+    state_machine.process_event(turn_on{});
     state_machine.process_event(event2{});
-    state_machine.process_event(event3{});
+    state_machine.process_event(turn_off{});
 
     CheckState(state_machine, "X", sml::X);
 
@@ -82,19 +82,19 @@ int main() {
     sml::sm<const_states> const_state_machine;
     CheckState(const_state_machine, "idle", const_states::idle);
 
-    const_state_machine.process_event(event1{});
+    const_state_machine.process_event(turn_on{});
 
     CheckState(const_state_machine, "idle", const_states::idle);
     CheckState(const_state_machine, "state_1", const_states::state_1);
 
-    const_state_machine.process_event(event1{});
+    const_state_machine.process_event(turn_on{});
     CheckState(const_state_machine, "state_1", const_states::state_1);
 
     const_state_machine.process_event(event2{});
     CheckState(const_state_machine, "state_2", const_states::state_2);
     CheckState(const_state_machine, "state_2", state<class state_22>);
 
-    const_state_machine.process_event(event3{});
+    const_state_machine.process_event(turn_off{});
     CheckState(const_state_machine, "X", sml::X);
 
     return 0;

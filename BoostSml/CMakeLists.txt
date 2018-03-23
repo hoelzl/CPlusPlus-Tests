@@ -17,6 +17,7 @@ include_directories(Sml/include)
 # include_directories(googletest/googlemock/include googletest/googlemock)
 
 add_executable(SmlHelloWorld sml_hello_world.cpp)
+add_executable(SmlAppliance sml_appliance.cpp)
 
 # enable_testing()
 
