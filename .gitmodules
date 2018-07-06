@@ -10,3 +10,6 @@
 [submodule "BoostSml/Sml"]
 	path = BoostSml/Sml
 	url = https://github.com/boost-experimental/sml.git
+[submodule "Matchers/googletest"]
+	path = Matchers/googletest
+	url = https://github.com/google/googletest.git
