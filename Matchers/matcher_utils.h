@@ -1,5 +1,5 @@
-//
-// Created by Matthias Hölzl on 7/6/2018.
+// Copyright 2018 Dr. Matthias Hölzl
+// Licensed under the MIT License
 //
 
 #ifndef SIMPLE_PROJECT_MATCHER_UTILS_H

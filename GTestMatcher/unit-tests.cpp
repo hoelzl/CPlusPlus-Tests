@@ -1,5 +1,5 @@
-//
-// Created by tc on 2018-03-13.
+// Copyright 2018 Dr. Matthias Hölzl
+// Licensed under the MIT License
 //
 
 #include <limits>

@@ -12,3 +12,6 @@ all its submodules do the following:
     git submodule init
     git submodule update --recursive
 
+All files written by me (Matthias Hölzl) are licensed under the terms of the MIT
+license. Files in submodules may be licensed under different licenses.
+

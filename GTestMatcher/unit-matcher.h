@@ -1,5 +1,5 @@
-//
-// Created by tc on 3/16/18.
+// Copyright 2018 Dr. Matthias Hölzl
+// Licensed under the MIT License
 //
 # pragma once
 

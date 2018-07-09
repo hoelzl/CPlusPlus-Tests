@@ -1,3 +1,7 @@
+// Copyright 2018 Dr. Matthias Hölzl
+// Licensed under the MIT License
+//
+
 #include "lib.h"
 #include "matcher_utils.h"
 #include "gmock/gmock.h"

@@ -1,3 +1,7 @@
+// Copyright 2018 Dr. Matthias Hölzl
+// Licensed under the MIT License
+//
+
 #include <iostream>
 #include <boost/units/systems/si.hpp>
 #include <boost/units/systems/si/io.hpp>
