@@ -5,6 +5,21 @@
 #include <iostream>
 #include <optional>
 #include <functional>
+#include <numeric>
+
+struct DomainType {
+    std::array<int, 512> ints{};
+
+    DomainType() {
+        ints.fill(1);
+    }
+};
+
+std::ostream& operator<<(std::ostream& stream, const DomainType& value) {
+    stream << "DomainType: " << value.ints[0];
+    return stream;
+}
+
 
 template<typename T>
 class PointerProxy {
@@ -49,18 +64,25 @@ void print_value(const std::optional<int>& value);
 
 void print_value(const int* value);
 
-void pointer_proxy_example();
+void print_value(const DomainType* value);
 
-void reference_wrapper_proxy_example();
+void int_pointer_proxy_example();
+
+void int_reference_wrapper_proxy_example();
+
+void domain_pointer_proxy_example();
 
 int main() {
-    pointer_proxy_example();
-    reference_wrapper_proxy_example();
+    int_pointer_proxy_example();
+    int_reference_wrapper_proxy_example();
+
+    domain_pointer_proxy_example();
 
     return 0;
 }
 
-void pointer_proxy_example() {
+void int_pointer_proxy_example() {
+    std::cout << "\n\nPointerProxy<int>\n" << std::endl;
     PointerProxy<int> pointer_proxy{};
     print_value(pointer_proxy.Get());
     pointer_proxy.Set(1);
@@ -75,7 +97,8 @@ void pointer_proxy_example() {
     print_value(const_proxy.Get());
 }
 
-void reference_wrapper_proxy_example() {
+void int_reference_wrapper_proxy_example() {
+    std::cout << "\n\nReferenceProxy<int>\n" << std::endl;
     ReferenceProxy<int> ref_proxy{};
     print_value(ref_proxy.Get());
     ref_proxy.Set(1);
@@ -90,6 +113,16 @@ void reference_wrapper_proxy_example() {
     print_value(const_proxy.Get());
 }
 
+void domain_pointer_proxy_example() {
+    std::cout << "\n\nPointerProxy<DomainType>\n" << std::endl;
+    PointerProxy<DomainType> proxy{};
+    print_value(proxy.Get());
+
+    DomainType value{};
+    proxy.Set(value);
+    print_value(proxy.Get());
+}
+
 void print_value(const std::optional<int>& value) {
     std::cout << "Proxy value (optional): "
               << (value.has_value() ? std::to_string(value.value()) : "<no value>")
@@ -100,4 +133,14 @@ void print_value(const int* value) {
     std::cout << "Proxy value (pointer): "
               << (value ? std::to_string(*value) : "<no value>")
               << std::endl;
+}
+
+void print_value(const DomainType* value) {
+    std::cout << "Proxy value (pointer): ";
+    if (value) {
+        std::cout << *value;
+    } else {
+        std::cout << "<no value>";
+    }
+    std::cout << std::endl;
 }
